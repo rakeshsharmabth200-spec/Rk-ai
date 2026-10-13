@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RK AI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #101827;
+      color: white;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background: #18243a;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    main {
+      max-width: 600px;
+      margin: 25px auto;
+      padding: 15px;
+    }
+    #chat {
+      min-height: 300px;
+      padding: 15px;
+      border-radius: 12px;
+      background: #1b2940;
+      white-space: pre-wrap;
+    }
+    .row {
+      display: flex;
+      gap: 8px;
+      margin-top: 15px;
+    }
+    input {
+      flex: 1;
+      min-width: 0;
+      padding: 14px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #3984ff;
+      color: white;
+      font-size: 16px;
+    }
+    footer {
+      text-align: center;
+      color: #aab6ca;
+      margin-top: 25px;
+    }
+  </style>
+</head>
+<body>
+  <header>🤖 RK AI</header>
+
+  <main>
+    <div id="chat">नमस्ते! 🙏
+मैं RK AI हूँ।
+आप मुझसे क्या पूछना चाहते हैं?</div>
+
+    <div class="row">
+      <input id="question" placeholder="अपना सवाल लिखें...">
+      <button onclick="ask()">भेजें</button>
+    </div>
+
+    <footer>आपका अपना RK AI Assistant</footer>
+  </main>
+
+  <script>
+    function ask() {
+      const input = document.getElementById("question");
+      const chat = document.getElementById("chat");
+      const question = input.value.trim();
+
+      if (!question) {
+        alert("पहले अपना सवाल लिखिए!");
+        return;
+      }
+
+      chat.textContent += "\n\nआप: " + question;
+      chat.textContent +=
+        "\nRK AI: यह शुरुआती डिज़ाइन है। AI के जवाब देने की सुविधा अभी जोड़नी बाकी है।";
+
+      input.value = "";
+    }
+  </script>
+</body>
+</html>
